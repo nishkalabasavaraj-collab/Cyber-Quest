@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#091613">
+  <title>CyberQuest | Learn. Detect. Defend.</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <header class="topbar">
+    <a class="brand" href="#home" aria-label="CyberQuest home"><span class="brand-mark">CQ</span><span>CYBER<span class="brand-light">QUEST</span><small>SECURITY AWARENESS ARENA</small></span></a>
+    <div class="top-right"><span class="local-tag"><i></i> LOCAL SESSION</span><button id="accountButton" class="account-button hidden" type="button"></button></div>
+  </header>
+  <main>
+    <section id="authView" class="auth-layout">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-line"></span> YOUR SECURITY JOURNEY STARTS HERE</div>
+        <h1>Think sharp.<br><em>Stay secure.</em></h1>
+        <p>Build everyday cyber instincts through quick, practical challenges. Learn to spot the risk before it becomes a problem.</p>
+        <div class="hero-points"><span><b>01</b> Spot suspicious messages</span><span><b>02</b> Build safer habits</span><span><b>03</b> Level up your skills</span></div>
+        <div class="hero-foot"><span class="shield">◆</span> A safe, fictional learning environment</div>
+      </div>
+      <div class="auth-card">
+        <div class="card-kicker">PLAYER ACCESS <span>● OFFLINE READY</span></div>
+        <h2 id="authTitle">Welcome back</h2><p id="authIntro" class="muted">Sign in to continue your training.</p>
+        <div class="auth-tabs"><button class="tab active" data-mode="login">Sign in</button><button class="tab" data-mode="register">Create account</button></div>
+        <form id="authForm">
+          <label for="username">USERNAME</label><input id="username" name="username" autocomplete="username" placeholder="e.g. cyber_scout" required minlength="3" maxlength="20">
+          <label for="password">PASSWORD <span class="label-note">8+ characters</span></label><input id="password" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" required minlength="8">
+          <button class="button primary full" id="authSubmit" type="submit">Enter the arena <span>↗</span></button>
+          <p id="authMessage" class="form-message" role="status"></p>
+        </form>
+        <div class="privacy-note"><span>◈</span> Passwords are hashed locally. Use a sample password, not a personal one.</div>
+      </div>
+    </section>
+
+    <section id="dashboardView" class="hidden">
+      <div class="welcome-row"><div><div class="eyebrow"><span class="eyebrow-line"></span> PLAYER DASHBOARD</div><h1>Ready, <em id="welcomeName">Scout</em>?</h1><p class="muted">Choose a challenge and put your cyber instincts to work.</p></div><div class="rank-chip"><span class="rank-icon">✦</span><span><small>CURRENT RANK</small><b id="playerLevel">Cyber Beginner</b></span></div></div>
+      <div class="stat-grid">
+        <article class="stat-card"><span class="stat-label">TOTAL POINTS</span><strong id="statPoints">0</strong><span class="stat-foot">Earn points as you learn</span><span class="stat-icon">✳</span></article>
+        <article class="stat-card"><span class="stat-label">CHALLENGES DONE</span><strong id="statChallenges">0</strong><span class="stat-foot">Every round counts</span><span class="stat-icon">⌁</span></article>
+        <article class="stat-card"><span class="stat-label">ACCURACY</span><strong id="statAccuracy">0<small>%</small></strong><span class="stat-foot">Keep sharpening your eye</span><span class="stat-icon">◉</span></article>
+        <article class="stat-card"><span class="stat-label">NEXT MILESTONE</span><strong class="milestone" id="statNext">80 pts</strong><span class="stat-foot" id="nextHint">Security Explorer</span><span class="stat-icon">↗</span></article>
+      </div>
+      <div class="section-heading"><div><div class="eyebrow"><span class="eyebrow-line"></span> TRAINING MODULES</div><h2>Choose your challenge</h2></div><button id="leaderboardButton" class="button quiet">Leaderboard <span>↗</span></button></div>
+      <div class="module-grid">
+        <article class="module-card" data-module="quiz"><div class="module-top"><span class="module-icon lime">⌘</span><span class="module-tag">10 ROUNDS · TIMED</span></div><h3>Quiz Arena</h3><p>Test your knowledge across passwords, phishing, networks, and more.</p><button class="module-link">Start challenge <span>→</span></button></article>
+        <article class="module-card" data-module="phishing"><div class="module-top"><span class="module-icon coral">⌕</span><span class="module-tag">10 MESSAGES</span></div><h3>Phishing Detective</h3><p>Read the signs. Decide whether a message is safe, suspicious, or phishing.</p><button class="module-link">Inspect messages <span>→</span></button></article>
+        <article class="module-card" data-module="password"><div class="module-top"><span class="module-icon blue">▣</span><span class="module-tag">PRIVATE · NOT SAVED</span></div><h3>Password Lab</h3><p>Explore password strength rules and create a random sample password.</p><button class="module-link">Open password lab <span>→</span></button></article>
+        <article class="module-card" data-module="scenario"><div class="module-top"><span class="module-icon purple">⌬</span><span class="module-tag">5 INCIDENTS</span></div><h3>Defender Scenarios</h3><p>Choose a calm, practical response to fictional security situations.</p><button class="module-link">Begin simulation <span>→</span></button></article>
+      </div>
+      <div class="bottom-row"><button id="profileButton" class="button quiet">My performance <span>↗</span></button><span class="safety-caption"><span>●</span> All scenarios are fictional and for learning only.</span><button id="logoutButton" class="text-button">Sign out</button></div>
+    </section>
+
+    <section id="gameView" class="hidden game-panel">
+      <button class="back-button" id="backButton">← Dashboard</button>
+      <div class="game-header"><div><div class="eyebrow"><span class="eyebrow-line"></span><span id="gameKicker">TRAINING MODULE</span></div><h1 id="gameTitle">Challenge</h1></div><div class="timer-chip hidden" id="timerChip">◷ <span id="timerValue">60</span>s</div></div>
+      <div id="gameContent"></div>
+    </section>
+    <section id="infoView" class="hidden game-panel">
+      <button class="back-button" id="infoBack">← Dashboard</button><div id="infoContent"></div>
+    </section>
+  </main>
+  <footer><span>CYBERQUEST <b>·</b> LEARN. DETECT. DEFEND.</span><span>LOCAL EDUCATIONAL SIMULATOR</span></footer>
+  <script src="/app.js"></script>
+</body>
+</html>
